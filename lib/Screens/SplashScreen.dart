@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Material(
       child: Container(
       
-        color:Color.fromARGB(218, 6, 206, 189),
+        color:green,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
