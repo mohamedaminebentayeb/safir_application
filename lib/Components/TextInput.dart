@@ -19,16 +19,16 @@ class CustomTextForm extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: obscured,
       style: TextStyle(
-        fontSize: 20,
+        fontSize: 15,
         fontFamily: 'Gotham',
         fontWeight: FontWeight.w100,
-        color: Colors.black,
+        color: green,
       ),
       decoration: InputDecoration(
   hintText: labelText,
       labelStyle: TextStyle(
-        fontWeight: FontWeight.w200,
-                fontSize: 20,
+        fontWeight: FontWeight.w100,
+                fontSize: 15,
               color:  Colors.black ,
             ),
       

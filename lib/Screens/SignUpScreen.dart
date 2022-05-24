@@ -7,16 +7,16 @@ import 'package:safir_application/Colors/Colors.dart';
 import '../Components/TextInput.dart';
 
   late GlobalKey _formKey;
-class LOginPage extends StatefulWidget {
-  const LOginPage({ Key? key }) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({ Key? key }) : super(key: key);
   
   get formKey => null;
 
   @override
-  _LOginPageState createState() => _LOginPageState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _LOginPageState extends State<LOginPage> {
+class _SignUpScreenState extends State<SignUpScreen> {
   late TextEditingController _email;
   late TextEditingController _password;
 
@@ -38,7 +38,7 @@ class _LOginPageState extends State<LOginPage> {
                              Transform.translate(
                                 offset: const Offset(0,-20),
                                 
-                               child :  const Header(),
+                               child :  const SignUpSignUpHeader(),
                               ),
                                   RichText(
                                          text: TextSpan(
@@ -49,17 +49,18 @@ class _LOginPageState extends State<LOginPage> {
                                             ),
                                             // ignore: prefer_const_literals_to_create_immutables
                                             children: <TextSpan>[
-                                               TextSpan(text: "Vous n'avez pas de compte ?"),
-                                              TextSpan(text: '   Inscriez vous' , style: const TextStyle(fontWeight: FontWeight.bold , color: Color.fromARGB(218, 6, 206, 189))),
+                                               TextSpan(text: "Vous avez deja un compte ?"),
+                                              TextSpan(text: '   connectez vous' , style: const TextStyle(fontWeight: FontWeight.bold , color: Color.fromARGB(218, 6, 206, 189))),
                                              
                                              
                                                                                       ],
                                              ),
                                         ),
-                                        SizedBox(
-                                      height: 0.003* MediaQuery.of(context).size.height,
- 
-                                        )
+                                            SizedBox(
+                  height: 0.004* MediaQuery.of(context).size.height,
+                ),
+
+                                      
    
 
                                         
@@ -76,8 +77,8 @@ class _LOginPageState extends State<LOginPage> {
     );
   }
 }
-class Header extends StatelessWidget {
-  const Header({ Key? key }) : super(key: key);
+class SignUpSignUpHeader extends StatelessWidget {
+  const SignUpSignUpHeader({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +103,8 @@ class Header extends StatelessWidget {
                                     fontSize: 30,
                                         ),
                                         children: <TextSpan>[
-                                          TextSpan(text: 'SE ' , style: TextStyle(fontWeight: FontWeight.bold , color: Color.fromARGB(220, 6, 206, 209))),
-                                          TextSpan(text: 'CONNECTER', style: TextStyle(color: Colors.black,
+                                          TextSpan(text: 'In' , style: TextStyle(fontWeight: FontWeight.bold , color: Color.fromARGB(220, 6, 206, 209))),
+                                          TextSpan(text: 'scrire', style: TextStyle(color: Colors.black,
                                                                               fontWeight: FontWeight.bold,
                                                                               fontSize: 30,
                                                                               )),
@@ -112,7 +113,7 @@ class Header extends StatelessWidget {
                                          ),
                                     )
                                     ),
-                                    LogCard(formKey: _formKey),
+                                    SignCard(formKey: _formKey),
                                         
 
                                     
@@ -126,8 +127,8 @@ class Header extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
-class LogCard extends StatefulWidget {
-  LogCard({
+class SignCard extends StatefulWidget {
+  SignCard({
     Key? key,
     
       required this.formKey,
@@ -136,17 +137,20 @@ class LogCard extends StatefulWidget {
   GlobalKey<FormState> formKey;
 
   @override
-  _LogCardState createState() => _LogCardState();
+  _SignCardState createState() => _SignCardState();
 }
 
-class _LogCardState extends State<LogCard> {
-   late TextEditingController _email;
+class _SignCardState extends State<SignCard> {
+  late TextEditingController _email;
+  late TextEditingController _username;
   late TextEditingController _password;
 
   @override
   void initState() {
     super.initState();
     _email = TextEditingController();
+     _username = TextEditingController();
+
     _password = TextEditingController();
   }
 
@@ -167,8 +171,38 @@ class _LogCardState extends State<LogCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.min,
               children: [
+                 Row(
+                  children: [
+                   
+             
+                
+                    AutoSizeText(
+                                      "Nom d'utilisateur",
+                                      maxLines: 1,
+                                      style: TextStyle(
+                                        color:gris,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 15,
+                                        
+                                      ),
+                                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 0.010* MediaQuery.of(context).size.height,
+                ),
+                CustomTextForm(
+                  labelText: 'aymen213',
+                  controller: _username,
+                   
+                ),
                 Row(
                   children: [
+                   
+                 SizedBox(
+                  height: 0.020* MediaQuery.of(context).size.height,
+                ),
+                
                     AutoSizeText(
                                       'Email',
                                       maxLines: 1,
@@ -220,58 +254,77 @@ class _LogCardState extends State<LogCard> {
                   SizedBox(
                   height: 0.010* MediaQuery.of(context).size.height,
                 ),
+                
                 CustomTextForm(
                   labelText: 'password.dz',
                   controller: _password,
                   obscured: true, 
                    
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 0.020* MediaQuery.of(context).size.height,
                 ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        AutoSizeText(
-                                          'Mot de passe oublier ?',
-                                          maxLines: 1, 
-                                          style: TextStyle(
-                                            color:gris,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 15,
-                                            
-                                          ),
-                            ),
-                      ],
-                    ),
+                Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     AutoSizeText(
+                                      'Confirmer le mot de passe',
+                                      maxLines: 1,
+                                      style: TextStyle(
+                                        color:gris,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 15,
+                                        
+                                      ),
+                                    ),
+                    
+                   ],
+                 ),
+                  SizedBox(
+                  height: 0.010* MediaQuery.of(context).size.height,
+                ),
+                  
+                CustomTextForm(
+                  labelText: 'password.dz',
+                  controller: _password,
+                  obscured: true, 
+                   
+                ),
+                
                     SizedBox(
-                  height: 0.050* MediaQuery.of(context).size.height,
+                  height: 0.020* MediaQuery.of(context).size.height,
                 ),
                 Row(
                   children: [
                     Expanded(
-                      child: TextButton(
-                        child: const Text(
-                          "Se connecter",
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
+                      child: SizedBox(
+                        height: 60,
+                        child: TextButton(
+                          child:  SizedBox(
+                            height: 24,
+                            child: Text(
+                              "Inscrire",
+                              style:  TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
-                        ),
-                        onPressed: () {
-                         
+                          onPressed: () {
+                           
                    
 //
-                          
-                        },
-                        style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 20),
-                          backgroundColor: green,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
                             
+                          },
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 50, vertical: 20),
+                            backgroundColor: green,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              
+                            ),
                           ),
                         ),
                       ),
@@ -279,7 +332,7 @@ class _LogCardState extends State<LogCard> {
                   ],
                 ),
                 SizedBox(
-                  height: 0.020* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -298,7 +351,7 @@ class _LogCardState extends State<LogCard> {
                       ],
                     ),
                       SizedBox(
-                  height: 0.040* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                 Row( 
                   mainAxisAlignment: MainAxisAlignment.center,
