@@ -23,7 +23,7 @@ class Buttom extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 10,
-                horizontal: 5,
+                horizontal: 8,
               ),     
           
               child: Column(
@@ -34,15 +34,18 @@ class Buttom extends StatelessWidget {
                     
                       
                       Expanded(
-                        flex: 1,
+                       // flex: 1,
                         child: Center(
-                          child: AutoSizeText(
-                            text,
-                            maxLines: 1,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20,
+                          child: SizedBox(
+                            height: 15,
+                            child: AutoSizeText(
+                              text,
+                              maxLines: 1,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),

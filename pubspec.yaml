@@ -66,6 +66,7 @@ flutter:
     - Assets/safirColored.png
     - Assets/facebook.png
     - Assets/google.png
+    - Assets/map.png
     #- Assets/LOGO-01.jpeg
   #   - images/a_dot_ham.jpeg
 
