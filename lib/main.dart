@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:safir_application/Screens/AddVisit.dart';
+import 'package:safir_application/Screens/Explorer.dart';
 import 'package:safir_application/Screens/LoginPage.dart';
 import 'package:safir_application/Screens/NotificationPage.dart';
 import 'package:safir_application/Screens/SignUpScreen.dart';
@@ -15,7 +16,7 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/NotificationScreen', // rout initialisation ( premiére page a afficher)
+      initialRoute: '/Explorerescreen', // rout initialisation ( premiére page a afficher)
       routes: {
         '/splashScreen': (context) => SplashScreen(), // route definition
         '/WelcomePage':(context) => WelcomePage(), 
@@ -24,7 +25,7 @@ void main() async {
         '/AddVisitScreen':(context) => AddVisitScreen(),
         '/AddVisitDetail':(context) => VisitDetails(),
         '/NotificationScreen':(context) => NotificationsScreen(),
-
+        '/Explorerescreen':(context) => ExplorerPage(),
 
       },
     ),

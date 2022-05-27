@@ -21,11 +21,14 @@ class _WelcomePageState extends State<WelcomePage> {
        child : Column(
          mainAxisAlignment: MainAxisAlignment.spaceAround,
          children: [
-           Column(
+        Transform.translate(
+                                offset: const Offset(0,20),
+                                
+                               child :    Column(
              mainAxisAlignment: MainAxisAlignment.center,
              children:  [
                  SizedBox(
-                              height:   0.080* MediaQuery.of(context).size.height, //screen height * 0.025,
+                              height:   0.250* MediaQuery.of(context).size.height, //screen height * 0.025,
                             ),
                SafirColored(),
                  AutoSizeText(
@@ -63,9 +66,14 @@ class _WelcomePageState extends State<WelcomePage> {
                                 
                                 
              ],
-           ),
+           ), 
+                              ),
+        
+            SizedBox(
+                              height:   0.250* MediaQuery.of(context).size.height, //screen height * 0.025,
+                            ),
              Container(
-                                   margin: EdgeInsets.all(20),
+                                   margin: EdgeInsets.all(20.00),
 
                         child: Buttom(text: Buttomtext, nextpage: nextpage)
                         )

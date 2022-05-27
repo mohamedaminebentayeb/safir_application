@@ -37,7 +37,7 @@ class Buttom extends StatelessWidget {
                        // flex: 1,
                         child: Center(
                           child: SizedBox(
-                            height: 15,
+                            height: 20,
                             child: AutoSizeText(
                               text,
                               maxLines: 1,

@@ -9,3 +9,5 @@ Color black = Color.fromARGB(255, 29, 29, 29);
 Color notif = Color.fromARGB(255, 237, 239, 242);
 Color notifsubstitle = Color.fromARGB(255, 107, 114, 128);
 Color background = Color.fromARGB(255, 237, 239, 242);
+Color orange = Color.fromARGB(255, 255, 207, 49);
+Color green2 =Color.fromARGB(255, 89, 204, 127);

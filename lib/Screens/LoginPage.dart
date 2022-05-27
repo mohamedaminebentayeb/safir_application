@@ -40,6 +40,10 @@ class _LOginPageState extends State<LOginPage> {
                                 
                                child :  const Header(),
                               ),
+                                Transform.translate(
+                                offset: const Offset(0,-10),
+                                
+                               child :
                                   RichText(
                                          text: TextSpan(
                                            style: const TextStyle(
@@ -55,11 +59,9 @@ class _LOginPageState extends State<LOginPage> {
                                              
                                                                                       ],
                                              ),
-                                        ),
-                                        SizedBox(
-                                      height: 0.003* MediaQuery.of(context).size.height,
- 
-                                        )
+                                        ), 
+                              ),
+                                        
    
 
                                         
@@ -245,7 +247,7 @@ class _LogCardState extends State<LogCard> {
                       ],
                     ),
                     SizedBox(
-                  height: 0.050* MediaQuery.of(context).size.height,
+                  height: 0.070* MediaQuery.of(context).size.height,
                 ),
                 Row(
                   children: [
@@ -279,7 +281,7 @@ class _LogCardState extends State<LogCard> {
                   ],
                 ),
                 SizedBox(
-                  height: 0.020* MediaQuery.of(context).size.height,
+                  height: 0.030* MediaQuery.of(context).size.height,
                 ),
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
