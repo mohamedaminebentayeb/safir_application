@@ -196,9 +196,13 @@ return Container(
             child: ListView(
               // This next line does the trick.
               scrollDirection: Axis.horizontal,
+              // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
                          
                           VisitCard(title: "Visite bab elouad", image : "circuit1" , etat: 'Terminé',),
+                          SizedBox(
+                            width: 20,
+                          ),
                           VisitCard(title: "Visite Oran", image : "circuit1" , etat: 'En cours',),
                             VisitCard(title: "Visite bab elouad", image : "circuit1" , etat: 'En cours',),
                           VisitCard(title: "Visite Oran", image : "circuit1" , etat: 'Terminé',),

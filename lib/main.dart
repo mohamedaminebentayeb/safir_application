@@ -1,8 +1,11 @@
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:safir_application/Screens/AddVisit.dart';
 import 'package:safir_application/Screens/Explorer.dart';
 import 'package:safir_application/Screens/LoginPage.dart';
+import 'package:safir_application/Screens/MapScreen.dart';
 import 'package:safir_application/Screens/MesVisitesScreen.dart';
 import 'package:safir_application/Screens/NotificationPage.dart';
 import 'package:safir_application/Screens/SignUpScreen.dart';
@@ -17,10 +20,10 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/MesVisitesScreen', // rout initialisation ( premiére page a afficher)
+      initialRoute: '/MapScreen', // rout initialisation ( premiére page a afficher)
       routes: {
         '/splashScreen': (context) => SplashScreen(), // route definition
-        '/WelcomePage':(context) => WelcomePage(), 
+        '/WelcomePage':(context) =>  WelcomePage(), 
         '/LoginPage':(context) => LOginPage(),
         '/SignUpScreen':(context) => SignUpScreen(),
         '/AddVisitScreen':(context) => AddVisitScreen(),
@@ -28,7 +31,8 @@ void main() async {
         '/NotificationScreen':(context) => NotificationsScreen(),
         '/Explorerescreen':(context) => ExplorerPage(),
         '/MesVisitesScreen':(context) => MesVisites(),
-
+        '/MapScreen':(context) => MapScreen(),
+                     
       },
     ),
   );

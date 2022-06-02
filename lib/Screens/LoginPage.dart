@@ -157,7 +157,7 @@ class _LogCardState extends State<LogCard> {
   Widget build(BuildContext context) {
     
     return Padding(
-      padding:const EdgeInsets.all(25),
+      padding:const EdgeInsets.all(20),
       child: Material(
                
         // ignore: sort_child_properties_last
@@ -247,7 +247,7 @@ class _LogCardState extends State<LogCard> {
                       ],
                     ),
                     SizedBox(
-                  height: 0.070* MediaQuery.of(context).size.height,
+                  height: 0.050* MediaQuery.of(context).size.height,
                 ),
                 Row(
                   children: [
@@ -300,19 +300,19 @@ class _LogCardState extends State<LogCard> {
                       ],
                     ),
                       SizedBox(
-                  height: 0.040* MediaQuery.of(context).size.height,
+                  height: 0.020* MediaQuery.of(context).size.height,
                 ),
                 Row( 
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                          height: 50,
-                          width: 50,
+                          height: 30,
+                          width: 30,
                           image: AssetImage('Assets/google.png'),
                          ),
                        Image(
-                          height: 50,
-                          width: 50,
+                          height: 30,
+                          width: 30,
                           image: AssetImage('Assets/facebook.png'),
                          ),
                       

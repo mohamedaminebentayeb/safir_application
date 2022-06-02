@@ -38,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                              Transform.translate(
                                 offset: const Offset(0,-20),
                                 
-                               child :  const SignUpSignUpHeader(),
+                               child :   SignUpSignUpHeader(),
                               ),
                                   RichText(
                                          text: TextSpan(
@@ -89,8 +89,8 @@ class SignUpSignUpHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
                const Image(
-              height: 200,
-              width: 150,
+              height: 150,
+              width: 100,
               image: const AssetImage('Assets/safirColored.png'),
             ),
           Transform.translate(
@@ -159,7 +159,7 @@ class _SignCardState extends State<SignCard> {
   Widget build(BuildContext context) {
     
     return Padding(
-      padding:const EdgeInsets.all(25),
+      padding:const EdgeInsets.fromLTRB(20, 0.0, 20, 20),
       child: Material(
                
         // ignore: sort_child_properties_last
@@ -189,7 +189,7 @@ class _SignCardState extends State<SignCard> {
                   ],
                 ),
                 SizedBox(
-                  height: 0.010* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                 CustomTextForm(
                   labelText: 'aymen213',
@@ -216,7 +216,7 @@ class _SignCardState extends State<SignCard> {
                   ],
                 ),
                   SizedBox(
-                  height: 0.010* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                 CustomTextForm(
                   labelText: 'jm_bentayeb@esi.dz',
@@ -252,7 +252,7 @@ class _SignCardState extends State<SignCard> {
                    ],
                  ),
                   SizedBox(
-                  height: 0.010* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                 
                 CustomTextForm(
@@ -281,7 +281,7 @@ class _SignCardState extends State<SignCard> {
                    ],
                  ),
                   SizedBox(
-                  height: 0.010* MediaQuery.of(context).size.height,
+                  height: 0.005* MediaQuery.of(context).size.height,
                 ),
                   
                 CustomTextForm(
@@ -292,7 +292,7 @@ class _SignCardState extends State<SignCard> {
                 ),
                 
                     SizedBox(
-                  height: 0.020* MediaQuery.of(context).size.height,
+                  height: 0.010* MediaQuery.of(context).size.height,
                 ),
                 Row(
                   children: [
