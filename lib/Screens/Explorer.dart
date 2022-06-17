@@ -38,7 +38,11 @@ return Container(
 
         child: Column(
           children: [
-                SafirColored(),
+                Image(
+              height: 100,
+              width: 100,
+              image: AssetImage('Assets/safirColored.png'),
+            ),
                Transform.translate(
                                 offset: const Offset(0,-15),
                child : DefaultTextStyle(
@@ -102,12 +106,12 @@ return Container(
                     
                 
                 SizedBox(
-                              height:   0.025* MediaQuery.of(context).size.height, //screen height * 0.025,
+                              height:   0.0100* MediaQuery.of(context).size.height, //screen height * 0.025,
                             ),
                    
                  
                  Padding(
-                   padding: const EdgeInsets.all(10.0),
+                   padding: const EdgeInsets.only(left : 10.0 , right: 10),
                    child: Row(
                      mainAxisAlignment: MainAxisAlignment.start,
                      children: [
@@ -145,12 +149,10 @@ return Container(
               ],
             ),
         ),
-         SizedBox(
-                                  height:   0.015* MediaQuery.of(context).size.height, //screen height * 0.025,
-                                ),
+        
 
                Padding(
-                 padding: const EdgeInsets.all(10.0),
+                 padding: const EdgeInsets.only(left :10.0 , right: 10.0),
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    // ignore: prefer_const_literals_to_create_immutables

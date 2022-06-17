@@ -55,16 +55,14 @@ class _VisitDetailsState extends State<VisitDetails> {
                     ),
                   
                     elevation: 0,
-                    leadingWidth: 70,
+                   // leadingWidth: 70,
     ),
   body: Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left : 20.0 , right: 20),
       child: Column(
-       mainAxisAlignment: MainAxisAlignment.spaceAround,
+       mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-                    height: 0.090* MediaQuery.of(context).size.height,
-                  ),
+        
          Row(
                     children: [
                       AutoSizeText(
@@ -107,95 +105,94 @@ class _VisitDetailsState extends State<VisitDetails> {
                                       ),
                     ],
                   ),
-        Container(
- 
- ),
-  SizedBox(
-                    height: 0.015* MediaQuery.of(context).size.height,
-                  ),
-     FormField(
-                  /// champ pour selectioner la date de naissance de l'utilisateur
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (e) {
-                    _dateValidate = _dateTime == null
-                        ? 'Il faut selectionner une date'
-                        : "";
-                  },
-                  builder: (FormFieldState<dynamic> e) => Container(
-                    height:60 ,
-                   // width: ,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(
-                        color: gris,
-                        width: 0.5,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        onTap: () {
-                          showDatePicker(
-                            initialEntryMode: DatePickerEntryMode.input,
-                            context: context,
-                            initialDate:
-                                _dateTime == null ? DateTime.now() : _dateTime,
-                            firstDate: DateTime(2000),
-                            lastDate: DateTime.now(),
-                          ).then((value) {
-                            setState(() {
-                              _dateTime = value!;
-                            });
-                          });
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                           
-                            Text(
-                            
-                              _dateTime == null
-                                  ? _dateValidate
-                                  : _dateTime.toString().split(" ")[0],
-                              style: TextStyle(
-                                color: _dateValidate ==
-                                        "Il faut selectionner une date"
-                                    ? Colors.red
-                                    : null,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w100,
+        
+          SizedBox(
+                            height: 0.015* MediaQuery.of(context).size.height,
+                          ),
+            FormField(
+                          /// champ pour selectioner la date de naissance de l'utilisateur
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (e) {
+                            _dateValidate = _dateTime == null
+                                ? 'Il faut selectionner une date'
+                                : "";
+                          },
+                          builder: (FormFieldState<dynamic> e) => Container(
+                            height:60 ,
+                          // width: ,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: gris,
+                                width: 0.5,
                               ),
-                              
                             ),
-                             Icon(
-                              Icons.calendar_today,
-                              color: _dateValidate !=
-                                      "Il faut selectionner une date"
-                                  ? green
-                                  : gris,
-                              size: 30,
+                            child: Padding(
+                              padding: const EdgeInsets.only( left: 8.0),
+                              child: InkWell(
+                                onTap: () {
+                                  showDatePicker(
+                                    initialEntryMode: DatePickerEntryMode.input,
+                                    context: context,
+                                    initialDate:
+                                        _dateTime == null ? DateTime.now() : _dateTime,
+                                    firstDate: DateTime(2000),
+                                    lastDate: DateTime.now(),
+                                  ).then((value) {
+                                    setState(() {
+                                      _dateTime = value!;
+                                    });
+                                  });
+                                },
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                  
+                                    Text(
+                                    
+                                      _dateTime == null
+                                          ? _dateValidate
+                                          : _dateTime.toString().split(" ")[0],
+                                      style: TextStyle(
+                                        color: _dateValidate ==
+                                                "Il faut selectionner une date"
+                                            ? Colors.red
+                                            : null,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w100,
+                                      ),
+                                      
+                                    ),
+                                    Icon(
+                                      Icons.calendar_today,
+                                      color: _dateValidate !=
+                                              "Il faut selectionner une date"
+                                          ? green
+                                          : gris,
+                                      size: 30,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
-                ),
-                 SizedBox(
-                    height: 0.30* MediaQuery.of(context).size.height,
-                  ),
-            
-            
-                          Buttom(text: "Generer circuit", nextpage: "hkhkhk"),
+                        SizedBox(
+                            height: 0.060* MediaQuery.of(context).size.height,
+                          ),
+                    
+                      Buttom(text: "Generer circuit", nextpage: "hkhkhk"),
 
+                                
             
                    
 
 
 
 
-      ]),
-    ),
+        ]
+        ),
+      ),
     
       
     );
