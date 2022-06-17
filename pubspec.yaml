@@ -75,6 +75,8 @@ flutter:
     - Assets/alger.png
     - Assets/oran.png
     - Assets/circuit1.png
+    - Assets/user.png
+    - Assets/flag.png
     #- Assets/LOGO-01.jpeg
   #   - images/a_dot_ham.jpeg
 

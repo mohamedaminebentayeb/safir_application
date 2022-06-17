@@ -12,6 +12,7 @@ import 'package:safir_application/Screens/SignUpScreen.dart';
 import 'package:safir_application/Screens/SplashScreen.dart';
 import 'package:safir_application/Screens/VisitDetails.dart';
 import 'package:safir_application/Screens/WelcomeScreen.dart';
+import 'package:safir_application/Screens/progilePage.dart';
 
 void main() async {
   runApp(
@@ -20,7 +21,7 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/MapScreen', // rout initialisation ( premiére page a afficher)
+      initialRoute: '/Profil', // rout initialisation ( premiére page a afficher)
       routes: {
         '/splashScreen': (context) => SplashScreen(), // route definition
         '/WelcomePage':(context) =>  WelcomePage(), 
@@ -32,6 +33,7 @@ void main() async {
         '/Explorerescreen':(context) => ExplorerPage(),
         '/MesVisitesScreen':(context) => MesVisites(),
         '/MapScreen':(context) => MapScreen(),
+        '/Profil':(context) => ProfilPage(),
                      
       },
     ),
