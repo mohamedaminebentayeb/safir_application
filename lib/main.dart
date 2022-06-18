@@ -25,7 +25,7 @@ void main() async {
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/navigation', // rout initialisation ( premiére page a afficher)
+      initialRoute: '/splashScreen', // rout initialisation ( premiére page a afficher)
       routes: {
         '/splashScreen': (context) => SplashScreen(), // route definition
         '/WelcomePage':(context) =>  WelcomePage(), 
