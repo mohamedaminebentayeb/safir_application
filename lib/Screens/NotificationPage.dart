@@ -27,8 +27,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
         child: Column(
           children: [
-                SafirColored(),
-               Transform.translate(
+ Image(
+              height: 100,
+              width: 100,
+              image: AssetImage('Assets/safirColored.png'),
+            ),
+                            Transform.translate(
                                 offset: const Offset(0,-15),
                child : DefaultTextStyle(
   style: TextStyle(  color: Colors.black,
@@ -48,7 +52,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
                ),
                Padding(
-                 padding: const EdgeInsets.all(8.0),
+                 padding: const EdgeInsets.only(left : 8.0 , right: 8.0),
                  child: Row(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
@@ -70,26 +74,31 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                    ],
                  ),
                ),
-        Expanded( 
-                          child: ListView.builder(
-                            itemCount:3,
-                            itemBuilder: (BuildContext context, ind) {
-                             
-                              return Column(
-                                children: [
+               Container(
+            margin: const EdgeInsets.symmetric(vertical: 0.0),
+            height: 250.0,
+            child: ListView(
+              // This next line does the trick.
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
+                notification(name: 'amine', photo: 'map', point: 10 , rank: 10),
+                                     SizedBox(
+                                      height: 0.005* MediaQuery.of(context).size.height,
+                                   ),
                                    notification(name: 'amine', photo: 'map', point: 10 , rank: 10),
                                      SizedBox(
-                                      height: 0.010* MediaQuery.of(context).size.height,
+                                      height: 0.005* MediaQuery.of(context).size.height,
+                                   ),
+                                   notification(name: 'amine', photo: 'map', point: 10 , rank: 10),
+                                     SizedBox(
+                                      height: 0.005* MediaQuery.of(context).size.height,
                                    )
-
-                             
-                                ],
-                              );
-                            },
-                          ),
-                        ),
+              ],
+            ),
+        ),
+     
                             
-                        Transform.translate(offset: Offset(0,-0.040* MediaQuery.of(context).size.height),
+                        Transform.translate(offset: Offset(0,0),
                          child :Padding(
                                   padding: const EdgeInsets.all(8.0),
                                       child: Row(

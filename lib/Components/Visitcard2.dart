@@ -1,11 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:safir_application/Colors/Colors.dart';
 
-class VisitCard extends StatelessWidget {
-  const VisitCard({ Key? key , required this.title, required this.image , required this.etat }) : super(key: key);
+class VisitCard2 extends StatelessWidget {
+  const VisitCard2({ Key? key , required this.title, required this.image , required this.etat }) : super(key: key);
 final String title;
 final String image;
 final String etat;
@@ -22,13 +20,13 @@ final String etat;
         child: Padding(
           padding: const EdgeInsets.all(0.0),
           child: Container(
-          height: 100,
+            height: 180,
           width: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left : 10.0 , right: 10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -92,9 +90,7 @@ final String etat;
 
               ),
                   child: Image(
-                    height: 100,
-                  //  width: 200,
-                    fit: BoxFit.fitWidth ,
+                    fit: BoxFit.fill ,
                     image: AssetImage('Assets/$image.png'),
                 ),
               ),

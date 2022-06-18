@@ -48,7 +48,7 @@ class _VisitdetailState extends State<Visitmoredetail> {
                       onPressed: () {
                         //un boutton pour retourner a la page planete choice
                         Navigator.pushReplacementNamed(
-                            context, '/Explorerescreen');
+                            context, '/navigation');
                       },
                       // ignore: prefer_const_constructors
                       icon: Icon(
@@ -65,11 +65,12 @@ class _VisitdetailState extends State<Visitmoredetail> {
      body: Column(
        children: [
          Scrolable(),
-           
-                        Padding(padding: const EdgeInsets.only(left : 15.0 , right:15),
+             Transform.translate(offset: Offset(0,-5),
+                       child : Padding(padding: const EdgeInsets.only(left : 15.0 , right:15),
                                         child : Buttom(text: "Terminer", nextpage: "bkbkb")
 
                         ),
+             )
 
        ],
      )

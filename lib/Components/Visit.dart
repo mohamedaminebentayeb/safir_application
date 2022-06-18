@@ -4,8 +4,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:safir_application/Colors/Colors.dart';
 
-class VisitCard extends StatelessWidget {
-  const VisitCard({ Key? key , required this.title, required this.image , required this.etat }) : super(key: key);
+class Visit extends StatelessWidget {
+  const Visit({ Key? key , required this.title, required this.image , required this.etat }) : super(key: key);
 final String title;
 final String image;
 final String etat;
@@ -22,8 +22,8 @@ final String etat;
         child: Padding(
           padding: const EdgeInsets.all(0.0),
           child: Container(
-          height: 100,
-          width: 200,
+                                 height: 250,
+
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -80,10 +80,9 @@ final String etat;
                   ),
                 ),
                  Container(
-                                     width: MediaQuery.of(context).size.width,
+                                  
+                     height: 200,
 
-                  height: 130,
-                      
                 child: ClipRRect(
                     borderRadius: new BorderRadius.only(
                       bottomLeft: const Radius.circular(10.0),
@@ -92,9 +91,7 @@ final String etat;
 
               ),
                   child: Image(
-                    height: 100,
-                  //  width: 200,
-                    fit: BoxFit.fitWidth ,
+
                     image: AssetImage('Assets/$image.png'),
                 ),
               ),

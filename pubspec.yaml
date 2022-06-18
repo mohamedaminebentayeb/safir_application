@@ -41,6 +41,8 @@ dependencies:
   google_maps_flutter: ^2.0.6
   flutter_polyline_points: ^1.0.0
   provider: ^6.0.3
+  dotted_border: ^2.0.0+2
+  
   
 
 dev_dependencies:
@@ -78,7 +80,10 @@ flutter:
     - Assets/user.png
     - Assets/flag.png
     - Assets/location.png
-    - Assets/category.png
+    - Assets/category.png 
+    - Assets/eteneraire.png
+    - Assets/profile.png
+    - Assets/visiteur.png
     #- Assets/LOGO-01.jpeg
   #   - images/a_dot_ham.jpeg
 

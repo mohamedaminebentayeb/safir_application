@@ -4,7 +4,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:safir_application/Classe/visitresume.dart';
 //import 'package:flutter_map/plugin_api.dart';
 // ignore: depend_on_referenced_packages
@@ -12,7 +11,7 @@ import 'package:safir_application/Colors/Colors.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
 import 'package:safir_application/Components/addcircuitbuttomn.dart';
-import 'package:safir_application/Components/visitresumecard.dart';
+import 'package:safir_application/Components/visitresumevard2.dart';
   final Set<Marker> markers = new Set();
    Completer<GoogleMapController> _controller = Completer();
 
@@ -94,8 +93,8 @@ import 'package:safir_application/Components/visitresumecard.dart';
       target:     LatLng(26.7137735, 84.315626) ,
       tilt: 59.440717697143555,  
       zoom: 15.151926040649414);
- class Ind extends ChangeNotifier {
- int? selectedIndex;
+ class Prov2 extends ChangeNotifier {
+ int? selectedIndex = 0;
  CameraPosition _kGooglePlex = CameraPosition(
     target:     LatLng(27.7137735, 85.315626) ,
     zoom: 15.4746,
@@ -124,19 +123,19 @@ visitresume Visitresume1 = new visitresume(nbvisiteurs: 13500, Title: "Sahara", 
 visitresume Visitresume2 = new visitresume(nbvisiteurs: 12000, Title: "Kabylie", attraction: " attraction ", duree: 7, index: 2, color: green,  origin: origin2 , polyline: pol2);
 visitresume Visitresume3 = new visitresume(nbvisiteurs: 12500, Title: "Tour d'oran'", attraction: " attraction ", duree: 3, index: 3, origin: origin3,color: green , polyline: pol3);
 Set <Polyline> _polylines = Set<Polyline> ();
-  var list = [Visitresume0 ,Visitresume1 , Visitresume2 , Visitresume3 ];
+  var list2 = [Visitresume ,Visitresume0 ,Visitresume1 , Visitresume2 , Visitresume3 ];
 
      const LatLng showLocation = const LatLng(27.7089427, 85.3086209); //location to show in map
 
  
-class MapScreen extends StatefulWidget {
-  const MapScreen({ Key? key }) : super(key: key);
+class MapScreen2 extends StatefulWidget {
+  const MapScreen2({ Key? key }) : super(key: key);
 
   @override
-  _MapScreenState createState() => _MapScreenState();
+  _MapScreen2State createState() => _MapScreen2State();
 }
 
-class _MapScreenState extends State<MapScreen> {
+class _MapScreen2State extends State<MapScreen2> {
   late int selectindex;
   GoogleMapController? mapController; //contrller for Google map
   PolylinePoints polylinePoints = PolylinePoints();
@@ -228,8 +227,8 @@ class _MapScreenState extends State<MapScreen> {
  
  
   Widget build(BuildContext context) {
-   return ChangeNotifierProvider<Ind>(
-          create: (context) => Ind(),
+   return ChangeNotifierProvider<Prov2>(
+          create: (context) => Prov2(),
       child: Scaffold(
          appBar: AppBar(
                      backgroundColor: notif,
@@ -306,7 +305,7 @@ class _MapScreenState extends State<MapScreen> {
                        scrollDirection: Axis.horizontal,
 
                         padding:EdgeInsets.only(left:15 , top: 5),
-                          itemCount: list.length+1,
+                          itemCount: list2.length+1,
                           itemBuilder: (BuildContext context, int ind) {
                        //  Color cardcolor  
                           // ignore: curly_braces_in_flow_control_structures
@@ -316,15 +315,11 @@ class _MapScreenState extends State<MapScreen> {
   child:Container(
                              height: 100.0,
                             margin: EdgeInsets.only(bottom: 50),
-                              child: VisitresumeCard(Title: list[ind].Title , nbvisiteurs: list[ind].nbvisiteurs, attraction: list[ind].attraction , duree: list[ind].duree , ind: ind,pol: list[ind].polyline, Org: list[ind].origin,),// Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
+                              child: VisitresumeCard2(Title: list2[ind-1].Title , nbvisiteurs: list2[ind-1].nbvisiteurs, attraction: list2[ind-1].attraction , duree: list2[ind-1].duree , ind: ind-1,pol: list2[ind-1].polyline, Org: list2[ind-1].origin,),// Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
 
                           ),                        
   onTap: () {                          
-  goToTheLake(list[ind].origin);
-           Provider.of<Ind>(context, listen: true)
-                              .updateInd(ind , list[ind].origin);
-           Provider.of<Ind>(context, listen: true)
-              .updatepol(list[ind].polyline);  },                      
+   },                      
 ) 
                        );
                        else return Container(
@@ -454,8 +449,8 @@ position: LatLng(27.7137735, 85.315626), //position of marker
 
 
     return 
-    ChangeNotifierProvider<Ind>(
-          create: (context) => Ind(),
+    ChangeNotifierProvider<Prov2>(
+          create: (context) => Prov2(),
           child :Container(
                         height: 0.550* MediaQuery.of(context).size.height,
                         child: GoogleMap(
@@ -464,9 +459,9 @@ position: LatLng(27.7137735, 85.315626), //position of marker
                           zoomControlsEnabled: false,
                           zoomGesturesEnabled: false,
                           markers: getmarkers(),
-                          polylines: {Provider.of<Ind>(context)._kpolyline},
+                          polylines: {pol},
              mapType: MapType.normal,
-              initialCameraPosition: Provider.of<Ind>(context)._kGooglePlex,
+              initialCameraPosition:origin,
               onMapCreated: (GoogleMapController controller) {
                 _controller.complete(controller);
                 

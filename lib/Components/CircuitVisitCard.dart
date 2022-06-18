@@ -109,7 +109,7 @@ final String title;
                                  Image(
               height: 20,
               width: 15,
-              image: AssetImage('Assets/map.png'),
+              image: AssetImage('Assets/category.png'),
             ),
                    SizedBox(
                   width: 0.012* MediaQuery.of(context).size.width,
@@ -139,7 +139,7 @@ final String title;
                                  Image(
               height: 20,
               width: 15,
-              image: AssetImage('Assets/map.png'),
+              image: AssetImage('Assets/visiteur.png'),
             ),
                    SizedBox(
                   width: 0.012* MediaQuery.of(context).size.width,

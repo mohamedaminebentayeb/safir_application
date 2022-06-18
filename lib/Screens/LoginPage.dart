@@ -262,11 +262,12 @@ class _LogCardState extends State<LogCard> {
                           ),
                         ),
                         onPressed: () {
+                          Navigator.pushNamed(context, '/navigation');},
                          
                    
 //
                           
-                        },
+                        
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 20),

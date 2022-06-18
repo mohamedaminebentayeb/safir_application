@@ -41,7 +41,7 @@ var items = [
                       onPressed: () {
                         //un boutton pour retourner a la page planete choice
                         Navigator.pushReplacementNamed(
-                            context, '/planetChoice');
+                            context, '/navigation');
                       },
                       // ignore: prefer_const_constructors
                       icon: Icon(
@@ -55,12 +55,12 @@ var items = [
                     leadingWidth: 70,
     ),
     body: Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left :20.0 , right: 20.0),
       child: Column(
        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           SizedBox(
-                    height: 0.070* MediaQuery.of(context).size.height,
+                    height: 0.020* MediaQuery.of(context).size.height,
                   ),
          Row(
                     children: [
@@ -106,6 +106,7 @@ var items = [
                 items: items.map((String items) {
                   return DropdownMenuItem(
                     
+                    
                     value: items,
                     child: Text(items),
                   );
@@ -119,36 +120,42 @@ var items = [
                 },
               ),
  ),
-  SizedBox(
-                    height: 0.015* MediaQuery.of(context).size.height,
-                  ),
+
      Transform.translate(      
        offset: Offset(-5,0) ,      
   child:Row(
     mainAxisAlignment: MainAxisAlignment.end,
-                         children:[   AutoSizeText(
-                                  'Selectioner sur la carte',
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    color:green,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                     decoration: TextDecoration.underline,
-                                        decorationColor: green, 
-                                  ),
-                               //textAlign: TextAlign.center,
-                                ),
+                         children:[   
+                                  GestureDetector(
+                                                                     onTap: () {
+                                                                                                                                            
+                                                                    },
+                                                                    child: new Text("Sélectionnez dans la carte ",   style: TextStyle(
+                                                                                    color:green,
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                    decoration: TextDecoration.underline,
+                                                                                    fontSize: 20,
+                                                                                    
+                                                                                  ),
+                                                            ),
+                                                      ),
                        
                          ]
 
                     ),
      ),
+       
+
                  SizedBox(
-                    height: 0.30* MediaQuery.of(context).size.height,
+                    height: 0.250* MediaQuery.of(context).size.height,
                   ),
             
             
-                          Buttom(text: "Suivant", nextpage: "hkhkhk"),
+                          Buttom(text: "Suivant", nextpage: "AddVisitDetail"),
+
+                 SizedBox(
+                    height: 0.00250* MediaQuery.of(context).size.height,
+                  ),
 
             
                    

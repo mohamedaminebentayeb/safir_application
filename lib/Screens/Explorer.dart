@@ -8,7 +8,9 @@ import 'package:safir_application/Components/TextInput.dart';
 import 'package:safir_application/Components/notification.dart';
 import 'package:safir_application/Components/rechercheBarre.dart';
 import 'package:safir_application/Components/rechercheInput.dart';
+import 'package:safir_application/Screens/MesVisitesScreen.dart';
 import 'package:safir_application/Screens/WelcomeScreen.dart';
+import 'package:safir_application/Screens/navigation.dart';
 
 import '../Components/VisitCard.dart';
 
@@ -39,12 +41,12 @@ return Container(
         child: Column(
           children: [
                 Image(
-              height: 100,
+              height: 80,
               width: 100,
               image: AssetImage('Assets/safirColored.png'),
             ),
                Transform.translate(
-                                offset: const Offset(0,-15),
+                                offset: const Offset(0,0),
                child : DefaultTextStyle(
                           // ignore: prefer_const_constructors
                           style: TextStyle(  color: Colors.black,
@@ -106,7 +108,7 @@ return Container(
                     
                 
                 SizedBox(
-                              height:   0.0100* MediaQuery.of(context).size.height, //screen height * 0.025,
+                              height:   0.0020* MediaQuery.of(context).size.height, //screen height * 0.025,
                             ),
                    
                  
@@ -136,7 +138,7 @@ return Container(
                  ), 
          
          Container(
-            margin: const EdgeInsets.symmetric(vertical: 20.0),
+            margin: const EdgeInsets.symmetric(vertical: 0.0),
             height: 200.0,
             child: ListView(
               // This next line does the trick.
@@ -173,28 +175,31 @@ return Container(
                                   ),
                                   
                     ),
-                          DefaultTextStyle(
-                                   style: TextStyle(  color: Colors.grey,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 15,),
-                  
-                                 child:AutoSizeText(
-                                    'Voir tout',
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                    
-                                      
-                                    ),
-                                 textAlign: TextAlign.start,
-                                  ),
-                                  
-                    ),
+                          GestureDetector(
+                                                                     onTap: () {
+                                                                                Navigator.of(context).push(MaterialPageRoute(
+                                             builder: (context) => Navigation(currentScreen: MesVisites(),
+                                              currentTab: 1,
+                                             )
+                                                            )
+                                             );
+                                                            
+                                                                                 
+                                                                    },
+                                                                    child: new Text("Voir tout ",   style: TextStyle(
+                                                                                    color:green,
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                    fontSize: 20,
+                                                                                    
+                                                                                  ),
+                                                            ),
+                                                      )
                    ],
                  ),
                ),
                               
                                Container(
-            height: 188.0,
+            height: 168.0,
             child: ListView(
               // This next line does the trick.
               scrollDirection: Axis.horizontal,

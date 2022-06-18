@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:safir_application/Colors/Colors.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -50,6 +52,11 @@ class Safir extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      Timer(
+            Duration(seconds: 3),
+                () =>Navigator.pushReplacementNamed(
+                            context, '/WelcomePage')
+         );
     return Stack(
       clipBehavior: Clip.none,
     

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:safir_application/Colors/Colors.dart';
-import 'package:safir_application/Screens/MapScreen.dart';
-class VisitresumeCard extends StatelessWidget {
-  const VisitresumeCard({ Key? key ,required this.attraction , required this.Title ,required this.Org , required this.nbvisiteurs , required this.duree , required this.ind , required this.pol}) : super(key: key);
+import 'package:safir_application/Screens/mapscreen2.dart';
+class VisitresumeCard2 extends StatelessWidget {
+  const VisitresumeCard2({ Key? key ,required this.attraction , required this.Title ,required this.Org , required this.nbvisiteurs , required this.duree , required this.ind , required this.pol}) : super(key: key);
 final String Title ;
 final String attraction ;
 final int nbvisiteurs;
@@ -17,17 +17,18 @@ final Polyline pol;
 final CameraPosition Org ;
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<Ind>(
-          create: (context) => Ind(),
+    return ChangeNotifierProvider<Prov2>(
+          create: (context) => Prov2(),
         child : Container(
            height: 120,
             width: 135,
           child: GestureDetector(
           onTap: () {
+            print('jsk');
                goToTheLake(Org);
-           Provider.of<Ind>(context, listen: false)
+           Provider.of<Prov2>(context, listen: false)
                               .updateInd(ind , Org);
-           Provider.of<Ind>(context, listen: false)
+           Provider.of<Prov2>(context, listen: false)
               .updatepol(pol);
            
                               
@@ -158,7 +159,7 @@ final CameraPosition Org ;
                 
               
                shape: RoundedRectangleBorder(
-        side: BorderSide(color:   Provider.of<Ind>(context).selectedIndex == ind? green : white, width: 2),
+        side: BorderSide(color:   Provider.of<Prov2>(context).selectedIndex == ind? green : white, width: 2),
         borderRadius: BorderRadius.circular(10),
    
   ),

@@ -40,7 +40,7 @@ class _ProfilPageState extends State<ProfilPage> {
               image: AssetImage('Assets/user.png'),
             ),
             SizedBox(
-              height:  0.010* MediaQuery.of(context).size.height, 
+              height:  0.005* MediaQuery.of(context).size.height, 
             ),
              DefaultTextStyle(
                                      style: TextStyle( ),
@@ -71,27 +71,27 @@ class _ProfilPageState extends State<ProfilPage> {
                                     ),
                      ),
                        SizedBox(
-              height:  0.010* MediaQuery.of(context).size.height, 
+              height:  0.005* MediaQuery.of(context).size.height, 
             ),
                      Profileinfo(title: Fullname,),
                      SizedBox(
-                        height:  0.010* MediaQuery.of(context).size.height, 
+                        height:  0.005* MediaQuery.of(context).size.height, 
                       ),
                      Profileinfo(title: email,),
                       SizedBox(
-                        height:  0.010* MediaQuery.of(context).size.height, 
+                        height:  0.005* MediaQuery.of(context).size.height, 
                       ),
                      phonenumberinfo(title :"0794834020" ),
                       SizedBox(
-                        height:  0.010* MediaQuery.of(context).size.height, 
+                        height:  0.005* MediaQuery.of(context).size.height, 
                       ),
                      Profileinfo(title: gender,),
                       SizedBox(
-                        height:  0.010* MediaQuery.of(context).size.height, 
+                        height:  0.005* MediaQuery.of(context).size.height, 
                       ),
                       birthdayinfo(title: birthday,),
                        SizedBox(
-                        height:  0.015* MediaQuery.of(context).size.height, 
+                        height:  0.010* MediaQuery.of(context).size.height, 
                       ),
                       Padding( padding: const EdgeInsets.only(left : 5.0 , right: 5),
                       child : Buttom(text: " Update profile", nextpage: "next one"),)

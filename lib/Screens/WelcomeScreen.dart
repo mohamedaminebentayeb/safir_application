@@ -75,7 +75,7 @@ class _WelcomePageState extends State<WelcomePage> {
              Container(
                                    margin: EdgeInsets.all(20.00),
 
-                        child: Buttom(text: Buttomtext, nextpage: nextpage)
+                        child: Buttom(text: Buttomtext, nextpage: "LoginPage")
                         )
 
          ],
