@@ -36,9 +36,10 @@ return Container(
               color: notif,
 
       child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(left :  10.0 , right: 10.0 , top : 15.0),
 
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
                 Image(
               height: 80,
@@ -207,9 +208,7 @@ return Container(
               children: <Widget>[
                          
                           VisitCard(title: "Visite bab elouad", image : "circuit1" , etat: 'Terminé',),
-                          SizedBox(
-                            width: 20,
-                          ),
+                         
                           VisitCard(title: "Visite Oran", image : "circuit1" , etat: 'En cours',),
                             VisitCard(title: "Visite bab elouad", image : "circuit1" , etat: 'En cours',),
                           VisitCard(title: "Visite Oran", image : "circuit1" , etat: 'Terminé',),

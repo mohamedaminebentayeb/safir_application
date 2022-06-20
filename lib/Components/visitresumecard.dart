@@ -20,8 +20,8 @@ final CameraPosition Org ;
     return ChangeNotifierProvider<Ind>(
           create: (context) => Ind(),
         child : Container(
-           height: 120,
-            width: 135,
+           height: 100,
+            width: 145,
           child: GestureDetector(
           onTap: () {
                goToTheLake(Org);
@@ -39,8 +39,10 @@ final CameraPosition Org ;
                 color: white,
                
                 child: Padding(
-                  padding: const EdgeInsets.only(left : 8.0 , right: 8.0),
-                  child: Column(children: [
+                  padding: const EdgeInsets.only(left : 8.0 ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
 
 
                     Row(children : [

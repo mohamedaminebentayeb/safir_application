@@ -20,7 +20,7 @@ final String etat;
         child: Padding(
           padding: const EdgeInsets.all(0.0),
           child: Container(
-            height: 180,
+            height: 100,
           width: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

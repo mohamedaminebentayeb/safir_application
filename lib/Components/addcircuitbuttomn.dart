@@ -23,7 +23,7 @@ Color.fromARGB(169, 21, 231, 214) ,          Colors.white,
               ],
             )
           ),
-        height: 220,
+        height: 200,
         width: 120,
           child: GestureDetector(
           onTap: () {

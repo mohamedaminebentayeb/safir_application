@@ -8,12 +8,28 @@ import 'package:safir_application/Components/buttomn2.dart';
 import 'package:safir_application/Components/feedback.dart';
 import 'package:safir_application/Components/generation_criteria.dart';
 var hebergement = [    
-    ' Lamaraz Arts',
-    'Holiday Inn Algiers ',
-    ' Dar-Tlidjene',
-    'Cheraga Tower',
-    'City Hotel Alger',
+    '2 étoiles',
+    '3 étoiles ',
+    '4 étoiles',
+    '5 étoiles',
+    
   ];
+  var Stations = [    
+    'Makam chahid',
+    'Sablette',
+    'Notre damme',
+    'Casbah',
+    'El hamma',
+  ];
+  var Duree = [    
+    '2 jours',
+    '5 jours ',
+    '7 jourss',
+    '10 jours',
+    '15 jours',
+  ];
+  enum Menu { itemOne, itemTwo, itemThree, itemFour }
+
 class generatePage extends StatefulWidget {
   const generatePage({ Key? key }) : super(key: key);
 
@@ -65,7 +81,10 @@ class _generatePageState extends State<generatePage> {
        padding: const EdgeInsets.all(8.0),
        child: Container(
          color : white,
-         child : Column(children: [
+         child : Column(
+           
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: [
 SizedBox(
                   height: 0.0050* MediaQuery.of(context).size.height,
                 ),
@@ -82,21 +101,28 @@ SizedBox(
                                                   
                                                 ),
                          ),
-                                                         GestureDetector(
-                                                                     onTap: () {
-                                                                                                                                            
-                                                                    },
-                                                                    child: new Text("Sélectionner >",   style: TextStyle(
-                                                                                    color:green,
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                    fontSize: 20,
-                                                                                    
-                                                                                  ),
-                                                            ),
-                                                      )
+                                                Container(
+                                                  height: 30,
+                                                  child: TextButton(onPressed: (){
+                                                   showPopupMenu(hebergement);
 
 
-                ]
+
+                                                  },
+                                                   child:AutoSizeText(
+                                               'Selectioner >',
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                    color:green,
+                                                    fontWeight: FontWeight.w500,
+                                                    decoration: TextDecoration.underline,
+                                                    fontSize: 20,
+                                                    
+                                                  ), )
+
+
+                                                  ),
+                                                )]
                 ),
  SizedBox(
                   height: 0.005* MediaQuery.of(context).size.height,
@@ -121,18 +147,28 @@ SizedBox(
                                                   
                                                 ),
                          ),
-                                                         GestureDetector(
-                                                                     onTap: () {
-                                                                     
-                                                                    },
-                                                                    child: new Text("Sélectionner >",   style: TextStyle(
-                                                                                    color:green,
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                    fontSize: 20,
-                                                                                    
-                                                                                  ),
-                                                            ),
-                                                                                                    )
+                                                          Container(
+                                                            height: 30,
+                                                            child: TextButton(onPressed: (){
+                                                 showPopupMenu(Stations);
+
+
+
+                                                },
+                                                 child:AutoSizeText(
+                                               'Selectioner >',
+                                                maxLines: 1,
+                                                style: TextStyle(
+                                                  color:green,
+                                                  fontWeight: FontWeight.w500,
+                                                  decoration: TextDecoration.underline,
+                                                  fontSize: 20,
+                                                  
+                                                ), )
+
+
+                                                ),
+                                                          )
 
 
                 ]
@@ -258,18 +294,28 @@ SizedBox(
                                                   
                                                 ),
                          ),
-                                                         GestureDetector(
-                                                                     onTap: () {
-                                                                     print("aa");
-                                                                    },
-                                                                    child: new Text("Sélectionner >",   style: TextStyle(
-                                                                                    color:green,
-                                                                                    fontWeight: FontWeight.w500,
-                                                                                    fontSize: 20,
-                                                                                    
-                                                                                  ),
-                                                            ),
-                                                                                                    )
+                            Container(
+                              height: 30,
+                              child: TextButton(onPressed: (){
+                                                   showPopupMenu(Duree);
+
+
+
+                                                  },
+                                                   child:AutoSizeText(
+                                                 'Selectioner >',
+                                                  maxLines: 1,
+                                                  style: TextStyle(
+                                                    color:green,
+                                                    fontWeight: FontWeight.w500,
+                                                    decoration: TextDecoration.underline,
+                                                    fontSize: 20,
+                                                    
+                                                  ), )
+
+
+                                                  ),
+                            )
 
 
                 ]
@@ -370,11 +416,7 @@ SizedBox(
                   height: 0.0050* MediaQuery.of(context).size.height,
                 ),
 
-                 Row(mainAxisAlignment: MainAxisAlignment.start,
-                   children: [critere(title: "Complique"),
-                
-                 
-                 ],),
+               
                   
                 //
 
@@ -403,4 +445,31 @@ SizedBox(
       
     );
   }
+  showPopupMenu(List<String> list){
+    var pos ;
+    list[0] == "2 jours" ? pos = RelativeRect.fromLTRB(25.0, 250.0, 0.0, .0) : pos =RelativeRect.fromLTRB(25.0, 25.0, 0.0, .0);
+    showMenu<String>(
+      
+      context: context,
+      
+     position: pos ,  //position where you want to show the menu on screen
+      items: [
+        PopupMenuItem<String>(
+            child:  Text("${list[0]}"), value: '1'),
+        PopupMenuItem<String>(
+            child:  Text(list[1]), value: '2'),
+        PopupMenuItem<String>(
+            child:  Text(list[2]), value: '3'),
+             PopupMenuItem<String>(
+            child:  Text(list[3]), value: '4'),
+      ],
+      elevation: 8.0,
+    )
+    .then<void>((String) {
+
+    
+     
+
+    });
+}
 }

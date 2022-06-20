@@ -11,6 +11,7 @@ import 'package:safir_application/Classe/visitresume.dart';
 import 'package:safir_application/Colors/Colors.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
+import 'package:safir_application/Components/Buttom.dart';
 import 'package:safir_application/Components/addcircuitbuttomn.dart';
 import 'package:safir_application/Components/visitresumecard.dart';
   final Set<Marker> markers = new Set();
@@ -19,9 +20,13 @@ import 'package:safir_application/Components/visitresumecard.dart';
  Polyline pol = Polyline(polylineId:PolylineId( " FIRST polyline "), 
  points: [
 
-   LatLng(27.7137735, 85.315626) ,
-   LatLng(27.7099116, 85.3132343),
-   showLocation,
+   LatLng(36.7484043, 3.075778) ,
+   LatLng(36.7456417, 3.0697775),
+   LatLng(36.8120345, 3.0225093),
+   LatLng(36.8205495, 3.0092078),
+   LatLng(36.8009262, 3.0426368),
+     LatLng(36.7484043, 3.075778) ,
+   
 
 
 
@@ -31,9 +36,12 @@ import 'package:safir_application/Components/visitresumecard.dart';
  Polyline pol1 = Polyline(polylineId:PolylineId( " Second polyline "), 
  points: [
 
- LatLng(27.7237625, 85.325626) ,
-   LatLng(27.7199116, 85.3132343),
-   showLocation,
+ LatLng(36.7422222, 3.1180556) ,
+   LatLng(36.7209669, 3.1376625),
+   LatLng(36.725575, 3.15063),
+   LatLng(36.7123834, 3.196724),
+    LatLng(36.7422222, 3.1180556) ,
+  
 
 
 
@@ -43,9 +51,13 @@ import 'package:safir_application/Components/visitresumecard.dart';
  Polyline pol2 = Polyline(polylineId:PolylineId( " Second polyline "), 
  points: [
 
- LatLng(27.7237625, 85.325626) ,
-   LatLng(27.7099116, 81.3132343),
-   LatLng(28.7099116, 81.0132343),
+ LatLng(36.800402, 2.9181427) ,
+ LatLng(36.7532487, 2.8881285) ,
+   
+ LatLng(36.7571141, 2.8465008) ,
+ LatLng(36.7668544, 2.9602011) ,
+LatLng(36.7432476, 2.8496069) ,
+ LatLng(36.800402, 2.9181427) ,
 
 
 
@@ -67,15 +79,16 @@ import 'package:safir_application/Components/visitresumecard.dart';
  
  width: 8, color: green );
  final CameraPosition origin = CameraPosition(
-    target:      LatLng(27.7137735, 85.315626) ,
+    target:     LatLng(36.7484043, 3.075778)  ,
     zoom: 13.4746,
   );
     final CameraPosition origin1 = CameraPosition(
-    target:    LatLng(27.7237625, 85.325626) ,
+    target:    LatLng(36.7422222, 3.1180556) ,
     zoom: 13.4746,
   );
     final CameraPosition origin2 = CameraPosition(
-    target:  LatLng(27.7137735, 85.315626) ,
+    target:  LatLng(36.800402, 2.9181427) ,
+
     zoom: 13.4746,
   );
   final CameraPosition origin3 = CameraPosition(
@@ -118,13 +131,13 @@ import 'package:safir_application/Components/visitresumecard.dart';
 visitresume Visitresume = new visitresume(nbvisiteurs: 15000, Title: "Tour Setif", attraction: " Historique ", duree: 10, index: 0 , color : green ,polyline: pol  , origin: origin);
 
   
-visitresume Visitresume0 = new visitresume(nbvisiteurs: 15000, Title: "Tour d'alger", attraction: " attraction ", duree: 3, index: 0 , color : green ,polyline: pol  , origin: origin);
+visitresume Visitresume0 = new visitresume(nbvisiteurs: 15000, Title: "Tour d'alger", attraction: " Touristique...", duree: 3, index: 0 , color : green ,polyline: pol  , origin: origin);
 
-visitresume Visitresume1 = new visitresume(nbvisiteurs: 13500, Title: "Sahara", attraction: " attraction ", duree: 15, index: 1 , color: green ,   origin: origin1, polyline: pol1);
-visitresume Visitresume2 = new visitresume(nbvisiteurs: 12000, Title: "Kabylie", attraction: " attraction ", duree: 7, index: 2, color: green,  origin: origin2 , polyline: pol2);
+visitresume Visitresume1 = new visitresume(nbvisiteurs: 13500, Title: "Tours S-Alger", attraction: "Touristique ...", duree: 15, index: 1 , color: green ,   origin: origin1, polyline: pol1);
+visitresume Visitresume2 = new visitresume(nbvisiteurs: 12000, Title: "Tours W-Alger", attraction: "Touristique...", duree: 7, index: 2, color: green,  origin: origin2 , polyline: pol2);
 visitresume Visitresume3 = new visitresume(nbvisiteurs: 12500, Title: "Tour d'oran'", attraction: " attraction ", duree: 3, index: 3, origin: origin3,color: green , polyline: pol3);
 Set <Polyline> _polylines = Set<Polyline> ();
-  var list = [Visitresume0 ,Visitresume1 , Visitresume2 , Visitresume3 ];
+  var list = [Visitresume0 ,Visitresume1 , Visitresume2  ];
 
      const LatLng showLocation = const LatLng(27.7089427, 85.3086209); //location to show in map
 
@@ -268,7 +281,7 @@ class _MapScreenState extends State<MapScreen> {
   
          padding: const EdgeInsets.all(00.0),
           child: Column( 
-            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [ 
                SizedBox(
                     height: 0.015* MediaQuery.of(context).size.height,
@@ -313,10 +326,10 @@ class _MapScreenState extends State<MapScreen> {
                           if (ind != 0)  return GestureDetector(
                               child: 
                               InkWell(                        
-  child:Container(
-                             height: 100.0,
-                            margin: EdgeInsets.only(bottom: 50),
-                              child: VisitresumeCard(Title: list[ind].Title , nbvisiteurs: list[ind].nbvisiteurs, attraction: list[ind].attraction , duree: list[ind].duree , ind: ind,pol: list[ind].polyline, Org: list[ind].origin,),// Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
+                      child:Container(
+                           height: 30.0,
+                            margin: EdgeInsets.only(bottom: 10),
+                              child: VisitresumeCard(Title: list[ind-1].Title , nbvisiteurs: list[ind-1].nbvisiteurs, attraction: list[ind-1].attraction , duree: list[ind-1].duree , ind: ind,pol: list[ind-1].polyline, Org: list[ind-1].origin,),// Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
 
                           ),                        
   onTap: () {                          
@@ -327,9 +340,9 @@ class _MapScreenState extends State<MapScreen> {
               .updatepol(list[ind].polyline);  },                      
 ) 
                        );
-                       else return Container(
-                         height: 100.0,
-                            margin: EdgeInsets.only(bottom: 50),
+                else return Container(
+                        height: 30.0,
+                          margin: EdgeInsets.only(bottom: 10),
                          
                          child : Card(child :addCircuitCard(),
                          shape: RoundedRectangleBorder(
@@ -343,26 +356,18 @@ class _MapScreenState extends State<MapScreen> {
                           },
                         ),
                       ),
-              
-              
-                    
-                    
-                    
-                      /*Container(
-              margin: const EdgeInsets.symmetric(vertical: 10.0),
-              height: 120.0,
-              child: ListView(
-                // This next line does the trick.
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                VisitresumeCard( Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
-                           VisitresumeCard( Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
-                VisitresumeCard( Title: "Tour d'alger", nbvisiteurs: 12, duree: 3,attraction: "attraction"),
+                      Container(
+                                   margin: EdgeInsets.only(left : 20.00 , right: 20.0),
 
-             
-             ],
-              ),
-          ),*/
+                        child: Buttom(text: "Commencer la visite", nextpage: "visitdetail")
+                        ),
+                         SizedBox(
+                    height: 0.010* MediaQuery.of(context).size.height,
+
+                      ),
+              
+              
+              
       
       
 
@@ -444,6 +449,133 @@ position: LatLng(27.7137735, 85.315626), //position of marker
         ),
         icon: BitmapDescriptor.defaultMarker, //Icon for Marker
       ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7484043, 3.075778), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+       markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7456417, 36.7456417), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.8120345, 3.0225093), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.8205495 , 3.0092078), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.8009262 ,3.0426368), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      )); //
+        markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7422222, 3.1180556), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7209669, 3.1376625), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+       markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.725575, 3.15063), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+       markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7123834, 3.196724), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.800402, 2.9181427), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));//
+         markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7532487, 2.8881285), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+       markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7571141, 2.8465008), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+      markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7668544, 2.9602011), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+        markers.add(Marker( //add third marker
+        markerId: MarkerId(showLocation.toString()),
+position: LatLng(36.7432476, 2.8496069), //position of marker
+        infoWindow: InfoWindow( //popup info 
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+
 
        //add more markers here 
     
@@ -457,12 +589,12 @@ position: LatLng(27.7137735, 85.315626), //position of marker
     ChangeNotifierProvider<Ind>(
           create: (context) => Ind(),
           child :Container(
-                        height: 0.550* MediaQuery.of(context).size.height,
+                        height: 0.500* MediaQuery.of(context).size.height,
                         child: GoogleMap(
                        //                 mapType: MapType.normal,
                           myLocationButtonEnabled: false,
-                          zoomControlsEnabled: false,
-                          zoomGesturesEnabled: false,
+                          zoomControlsEnabled: true,
+                          zoomGesturesEnabled: true,
                           markers: getmarkers(),
                           polylines: {Provider.of<Ind>(context)._kpolyline},
              mapType: MapType.normal,

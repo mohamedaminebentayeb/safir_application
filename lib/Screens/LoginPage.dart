@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
+import 'package:injector/injector.dart';
 import 'package:safir_application/Colors/Colors.dart';
+import 'package:supabase/supabase.dart';
 
 import '../Components/TextInput.dart';
 
@@ -262,7 +265,9 @@ class _LogCardState extends State<LogCard> {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/navigation');},
+                          _login();
+                          Navigator.pushNamed(context, '/navigation');
+                          },
                          
                    
 //
@@ -337,4 +342,45 @@ class _LogCardState extends State<LogCard> {
     );
     
   }
+   Future _login() async {
+    final signInResult = await Injector.appInstance
+        .get<SupabaseClient>()
+        .auth
+        .signIn(email: _email.text.split(" ")[0], password: _password.text);
+    if (signInResult != null && signInResult.user != null) {
+             print(' teeeeeeest login \n \n\n');
+
+    
+      
+      Navigator.pushReplacementNamed(context, '/navigation');
+    // ignore: unnecessary_null_comparison
+    } else if (signInResult.error!.message != null) {
+
+      TextButton(
+          onPressed: () {},
+          child: Text(' erreur dans le mot de passe ou le mail'));
+      showFlash(
+          context: context,
+          duration: const Duration(seconds: 2),
+          builder: (context, controller) {
+            return Flash.dialog(
+                controller: controller,
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                backgroundGradient: LinearGradient(colors: [green, white]),
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    signInResult.error!.message,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        backgroundColor: Colors.white),
+                  ),
+                ));
+          });
+    }
+  }
+
+
 }

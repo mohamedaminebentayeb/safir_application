@@ -20,14 +20,17 @@ class VisitDetails extends StatefulWidget {
 
 class _VisitDetailsState extends State<VisitDetails> {
   var items = [    
-    'Culture',
     'Historique',
-    'Mondiale',
+    'Touriqtique',
+    'Gastronomique',
+    'Attraction',
+    'shooping' ,
+    'Réligieuse'
   
   ];
   var ind = [];
     late String value ;
-    String dropdownvalue = 'Culture';  
+    String dropdownvalue = 'shooping';  
      late TextEditingController _theme;
        late DateTime _dateTime =  DateTime. now();
        String _dateValidate = "Date de Naissance";
@@ -145,13 +148,21 @@ class _VisitDetailsState extends State<VisitDetails> {
                          if(ind.length >=2 ) Container(
                          height: 40,
                          width: 150,
-                         child :themeCard(title: "Culture"),)
+                         child :themeCard(title: "Gastronomique"),),
+                         
 
 
 
                        
                      ],
                     ) ,
+                    Row(children: [
+                      if(ind.length >=2 ) Container(
+                         height: 40,
+                         width: 150,
+                         child :themeCard(title: "Touriqtique"),)
+
+                    ],),
                   
 
                   
@@ -177,74 +188,217 @@ class _VisitDetailsState extends State<VisitDetails> {
             SizedBox(
                               height: 0.015* MediaQuery.of(context).size.height,
                             ),
-              FormField(
-                            /// champ pour selectioner la date de naissance de l'utilisateur
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
-                            validator: (e) {
-                              _dateValidate = _dateTime == null
-                                  ? 'Il faut selectionner une date'
-                                  : "";
-                            },
-                            builder: (FormFieldState<dynamic> e) => Container(
-                              height:60 ,
-                            // width: ,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                  color: gris,
-                                  width: 0.5,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only( left: 8.0),
-                                child: InkWell(
-                                  onTap: () {
-                                    showDatePicker(
-                                      initialEntryMode: DatePickerEntryMode.input,
-                                      context: context,
-                                      initialDate:
-                                          _dateTime == null ? DateTime.now() : _dateTime,
-                                      firstDate: DateTime(2000),
-                                      lastDate: DateTime.now(),
-                                    ).then((value) {
-                                      setState(() {
-                                        _dateTime = value!;
-                                      });
-                                    });
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                    
-                                      Text(
-                                      
-                                        _dateTime == null
-                                            ? _dateValidate
-                                            : _dateTime.toString().split(" ")[0],
-                                        style: TextStyle(
-                                          color: _dateValidate ==
-                                                  "Il faut selectionner une date"
-                                              ? Colors.red
-                                              : null,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w100,
-                                        ),
-                                        
-                                      ),
-                                      Icon(
-                                        Icons.calendar_today,
-                                        color: _dateValidate !=
-                                                "Il faut selectionner une date"
-                                            ? green
-                                            : gris,
-                                        size: 30,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+
+                                 
+                                        SizedBox(
+                              width: 0.030* MediaQuery.of(context).size.width,
                             ),
-                          ),
+                                     
+
+
+
+                              ],
+                            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column( 
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Transform.translate(
+                              offset: const Offset(-50,0),
+
+                             child: AutoSizeText(
+                                                'From ',
+                                                maxLines: 2,
+                                                style: TextStyle(
+                                                  color:black,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 20,
+                                                                                         
+                                                ),
+                                              ),
+                           ),
+                         ],
+                       ),
+                      Row(
+                        children: [
+                          FormField(
+                                        /// champ pour selectioner la date de naissance de l'utilisateur
+                                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                                        validator: (e) {
+                                          _dateValidate = _dateTime == null
+                                              ? 'Il faut selectionner une date'
+                                              : "";
+                                        },
+                                        builder: (FormFieldState<dynamic> e) => Container(
+                                          height:60 ,
+                                         width:  0.25*MediaQuery.of(context).size.height,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(10),
+                                            border: Border.all(
+                                              color: gris,
+                                              width: 0.5,
+                                            ),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only( left: 8.0),
+                                            child: InkWell(
+                                              onTap: () {
+                                                showDatePicker(
+                                                  initialEntryMode: DatePickerEntryMode.input,
+                                                  context: context,
+                                                  initialDate:
+                                                      _dateTime == null ? DateTime.now() : _dateTime,
+                                                  firstDate: DateTime(2000),
+                                                  lastDate: DateTime.now(),
+                                                ).then((value) {
+                                                  setState(() {
+                                                    _dateTime = value!;
+                                                  });
+                                                });
+                                              },
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                
+                                                  Text(
+                                                  
+                                                    _dateTime == null
+                                                        ? _dateValidate
+                                                        : _dateTime.toString().split(" ")[0],
+                                                    style: TextStyle(
+                                                      color: _dateValidate ==
+                                                              "Il faut selectionner une date"
+                                                          ? Colors.red
+                                                          : null,
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.w100,
+                                                    ),
+                                                    
+                                                  ),
+                                                  Icon(
+                                                    Icons.calendar_today,
+                                                    color: _dateValidate !=
+                                                            "Il faut selectionner une date"
+                                                        ? green
+                                                        : gris,
+                                                    size: 30,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                        ],
+                      ),
+                    ],
+                  ),
+                              SizedBox(
+                              width: 0.030* MediaQuery.of(context).size.width,
+                            ),
+                               Column(
+                                 children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                        Transform.translate(
+                              offset: const Offset(-50,0),
+                                            child: AutoSizeText(
+                                                'Until',
+                                                maxLines: 2,
+                                                style: TextStyle(
+                                                  color:black,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 20,
+                                                                                         
+                                                ),
+                                              ),
+                                          ),
+                                        ],
+                                      ),
+                                   FormField(
+                                    /// champ pour selectioner la date de naissance de l'utilisateur
+                                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                                    validator: (e) {
+                                      _dateValidate = _dateTime == null
+                                          ? 'Il faut selectionner une date'
+                                          : "";
+                                    },
+                                    builder: (FormFieldState<dynamic> e) => Container(
+                                      height:60 ,
+                                    width:  0.25*MediaQuery.of(context).size.height,                              
+                                        decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(
+                                          color: gris,
+                                          width: 0.5,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.only( left: 8.0),
+                                        child: InkWell(
+                                          onTap: () {
+                                            showDatePicker(
+                                              initialEntryMode: DatePickerEntryMode.input,
+                                              context: context,
+                                              initialDate:
+                                                  _dateTime == null ? DateTime.now() : _dateTime,
+                                              firstDate: DateTime(2000),
+                                              lastDate: DateTime.now(),
+                                            ).then((value) {
+                                              setState(() {
+                                                _dateTime = value!;
+                                              });
+                                            });
+                                          },
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                            
+                                              Text(
+                                              
+                                                _dateTime == null
+                                                    ? _dateValidate
+                                                    : _dateTime.toString().split(" ")[0],
+                                                style: TextStyle(
+                                                  color: _dateValidate ==
+                                                          "Il faut selectionner une date"
+                                                      ? Colors.red
+                                                      : null,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w100,
+                                                ),
+                                                
+                                              ),
+                                              Icon(
+                                                Icons.calendar_today,
+                                                color: _dateValidate !=
+                                                        "Il faut selectionner une date"
+                                                    ? green
+                                                    : gris,
+                                                size: 30,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                              ),
+                                 ],
+                               ),
+                ],
+              ),
                           SizedBox(
                               height: 0.060* MediaQuery.of(context).size.height,
                             ),

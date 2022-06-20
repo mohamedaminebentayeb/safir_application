@@ -23,8 +23,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               color: notif,
 
       child: Padding(
-              padding: const EdgeInsets.all(8.0),
-
+ padding: const EdgeInsets.only(left :  10.0 , right: 10.0 , top : 15.0),
         child: Column(
           children: [
  Image(

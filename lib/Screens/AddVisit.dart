@@ -13,13 +13,13 @@ class AddVisitScreen extends StatefulWidget {
 
 class _AddVisitScreenState extends State<AddVisitScreen> {
   late String value ;
-    String dropdownvalue = 'Item 1';   
+    String dropdownvalue = 'Oran';   
 var items = [    
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+    'Alger',
+    'Oran',
+    'Tizi ouzou',
+    'Bejaia',
+    'Setif',
   ];
   @override
   Widget build(BuildContext context) {

@@ -24,9 +24,10 @@ class _ProfilPageState extends State<ProfilPage> {
              color: notif,
 
       child: Padding(
-              padding: const EdgeInsets.only(left : 8.0 , right: 8),
+              padding: const EdgeInsets.only(left : 8.0 , right: 8 , top : 5),
 
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
                   Image(
               height: 100,

@@ -17,15 +17,19 @@ import 'package:safir_application/Screens/mapscreen2.dart';
 import 'package:safir_application/Screens/navigation.dart';
 import 'package:safir_application/Screens/progilePage.dart';
 import 'package:safir_application/Screens/visitdetail.dart';
+import 'package:supabase/supabase.dart';
 
-void main() async {
+const supabaseUrl = 'https://ltsahdljhuochhecajen.supabase.co';
+const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMDQ3OTY4MiwiZXhwIjoxOTM2MDU1NjgyfQ.IoKgpB9APMw5Te9DYgbJZIbYcvPOwl41dl4-IKFjpVk';
+final supabaseclient = SupabaseClient(supabaseUrl, supabaseKey);void main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Roboto",
       ),
-      initialRoute: '/splashScreen', // rout initialisation ( premiére page a afficher)
+      initialRoute: '/navigation', // rout initialisation ( premiére page a afficher)
       routes: {
         '/splashScreen': (context) => SplashScreen(), // route definition
         '/WelcomePage':(context) =>  WelcomePage(), 
@@ -43,7 +47,6 @@ void main() async {
         '/navigation':(context) => Navigation(currentScreen: ExplorerPage(), currentTab: 0,),
          '/MapScreen2':(context) => MapScreen2(),
 
-        //Navigation
                      
       },
     ),

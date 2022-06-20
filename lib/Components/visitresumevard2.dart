@@ -21,10 +21,9 @@ final CameraPosition Org ;
           create: (context) => Prov2(),
         child : Container(
            height: 120,
-            width: 135,
+            width: 145,
           child: GestureDetector(
           onTap: () {
-            print('jsk');
                goToTheLake(Org);
            Provider.of<Prov2>(context, listen: false)
                               .updateInd(ind , Org);
@@ -40,8 +39,11 @@ final CameraPosition Org ;
                 color: white,
                
                 child: Padding(
-                  padding: const EdgeInsets.only(left : 8.0 , right: 8.0),
-                  child: Column(children: [
+                  padding: const EdgeInsets.only(left : 8.0 ),
+                  child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+
+                    children: [
 
 
                     Row(children : [
